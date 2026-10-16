@@ -29,6 +29,7 @@ function validateBookInput(data, isUpdate = false) {
 
   if (!isUpdate || data.price !== undefined) {
     const parsedPrice = Number(data.price);
+const isValidPrice = Number.isFinite(parsedPrice) && parsedPrice >= 0;
     if (
   data.price === null ||
   data.price === '' ||
