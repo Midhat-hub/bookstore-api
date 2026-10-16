@@ -29,7 +29,12 @@ function validateBookInput(data, isUpdate = false) {
 
   if (!isUpdate || data.price !== undefined) {
     const parsedPrice = Number(data.price);
-    if (data.price === null || data.price === '' || isNaN(parsedPrice) || parsedPrice < 0) {
+    if (
+  data.price === null ||
+  data.price === '' ||
+  !Number.isFinite(parsedPrice) ||
+  parsedPrice < 0
+) {
       const error = new Error('Price must be a valid non-negative number');
       error.statusCode = 400;
       throw error;
