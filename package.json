@@ -1,0 +1,19 @@
+{
+  "name": "bookstore-api",
+  "version": "1.0.0",
+  "description": "A beginner-friendly Node.js Express bookstore REST API",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test tests/bookService.test.js tests/bookRoutes.test.js",
+    "migrate": "node -e \"const fs = require('fs'); const { query, closePool } = require('./src/db/database'); const sql = fs.readFileSync('./migrations/001_create_books.sql', 'utf8'); query(sql).then(() => { console.log('Migration completed successfully.'); return closePool(); }).catch(err => { console.error('Migration failed:', err); process.exit(1); });\""
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0"
+  }
+}
