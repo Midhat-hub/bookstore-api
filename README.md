@@ -347,3 +347,5 @@ This runs:
 Catchup automatic polling test.
 
 Catchup queue test A.
+
+Catchup queue test B.
