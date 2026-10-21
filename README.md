@@ -343,3 +343,5 @@ This runs:
   ```bash
   curl -X DELETE http://localhost:3000/api/books/2
   ```
+
+Catchup automatic polling test.
