@@ -52,7 +52,7 @@ const isValidPrice = Number.isFinite(parsedPrice) && parsedPrice >= 0;
     }
     validated.stock_quantity = parsedStock;
   } else if (!isUpdate) {
-    validated.stock_quantity =1;
+    validated.stock_quantity =0;
   }
 
   if (isUpdate && Object.keys(validated).length === 0) {
