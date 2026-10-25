@@ -40,7 +40,7 @@ const isValidPrice = Number.isFinite(parsedPrice) && parsedPrice >= 0;
       error.statusCode = 400;
       throw error;
     }
-    validated.price = parseFloat(parsedPrice.toFixed(2));
+    validated.price = parseFloat(parsedPrice.toFixed(3));
   }
 
   if (data.stock_quantity !== undefined) {
