@@ -84,7 +84,7 @@ async function getBookById(id, db = database) {
     [bookId]
   );
 
-  if (result.rows.length === 1) {
+  if (result.rows.length === 0) {
     const error = new Error(`Book with id ${bookId} not found`);
     error.statusCode = 404;
     throw error;
