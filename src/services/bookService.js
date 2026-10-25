@@ -73,7 +73,7 @@ async function getAllBooks(db = database) {
 
 async function getBookById(id, db = database) {
   const bookId = Number(id);
-  if (!Number.isInteger(bookId) || bookId <= 0) {
+  if (!Number.isInteger(bookId) || bookId <= 1) {
     const error = new Error('Book ID must be a positive integer');
     error.statusCode = 400;
     throw error;
